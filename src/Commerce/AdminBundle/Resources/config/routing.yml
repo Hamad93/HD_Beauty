@@ -1,0 +1,29 @@
+commerce_site:
+    resource: "@CommerceSiteBundle/Resources/config/routing.yml"
+    prefix:   /site
+
+commerce_user:
+    resource: "@CommerceUserBundle/Resources/config/routing/all.xml"
+
+commerce_admin_homepage:
+    path:     /
+    defaults: { _controller: CommerceAdminBundle:Default:index}
+
+
+commerce_hwiconnexion:
+    resource: "@CommerceHwiconnexionBundle/Resources/config/routing.xml"
+    prefix:   /
+
+hwi_oauth_security:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix: /login
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix: /login
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /login
+
+

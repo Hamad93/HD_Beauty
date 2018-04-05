@@ -1,0 +1,3 @@
+commerce_site_homepage:
+    path:     /
+    defaults: { _controller: CommerceSiteBundle:Default:index }
