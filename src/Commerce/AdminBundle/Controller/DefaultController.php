@@ -9,7 +9,7 @@ class DefaultController extends Controller
     public function indexAction()
     {
 //        $this->get('envoi.mail')->sendtest('diallohamad@gmail.com');
-        return $this->render('@CommerceAdmin/Default/index.html.twig');
+        return $this->render('@CommerceAdmin/layout.html.twig');
 
     }
 }

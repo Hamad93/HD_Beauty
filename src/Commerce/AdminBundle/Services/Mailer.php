@@ -39,7 +39,7 @@ class Mailer
     public function sendtest($mail_med)
     {
         // reception du mail pour lactivation du compte de medecin et du clien
-        $template = '@CommerceAdmin/Default/index.html.twig';
+        $template = '@CommerceAdmin/Default/layout.html.twig';
 
         $date = new \Datetime();
         $date=$date->format('d-m-Y H:i');
