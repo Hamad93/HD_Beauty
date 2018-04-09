@@ -1,18 +1,18 @@
 commerce_site:
     resource: "@CommerceSiteBundle/Resources/config/routing.yml"
-    prefix:   /site
+    prefix:   /
 
 commerce_user:
     resource: "@CommerceUserBundle/Resources/config/routing/all.xml"
 
 commerce_admin_homepage:
-    path:     /
+    path:     /admin
     defaults: { _controller: CommerceAdminBundle:Default:index}
 
 
 commerce_hwiconnexion:
     resource: "@CommerceHwiconnexionBundle/Resources/config/routing.xml"
-    prefix:   /
+    prefix:   /hwi
 
 hwi_oauth_security:
     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"

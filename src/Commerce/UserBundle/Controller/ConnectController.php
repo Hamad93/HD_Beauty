@@ -73,7 +73,7 @@ class ConnectController
             }
         }
 
-        return $this->render('@CommerceAdmin/Default/index.html.twig', array(
+        return $this->render('@CommerceAdmin/Default/layout.html.twig', array(
             'error' => $error,
         ));
     }

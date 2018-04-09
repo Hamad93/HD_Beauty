@@ -1,3 +1,23 @@
 commerce_site_homepage:
     path:     /
     defaults: { _controller: CommerceSiteBundle:Default:index }
+
+commerce_site_accessoires:
+    path:     /accessoires
+    defaults: { _controller: CommerceSiteBundle:Default:accessoires }
+
+commerce_site_panier:
+    path:     /panier
+    defaults: { _controller: CommerceSiteBundle:Default:panier }
+
+commerce_site_blog:
+    path:     /blog
+    defaults: { _controller: CommerceSiteBundle:Default:blog }
+
+commerce_site_contacter_nous:
+    path:     /contacter-nous
+    defaults: { _controller: CommerceSiteBundle:Default:contacternous }
+
+commerce_site_apropros:
+    path:     /Qui-Sommes-nous
+    defaults: { _controller: CommerceSiteBundle:Default:apropos }
