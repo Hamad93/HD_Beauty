@@ -77,11 +77,85 @@
         <script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
         <!--===============================================================================================-->
         <script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
         <script type="text/javascript">
             $('.block2-btn-addcart').each(function(){
                 var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+
                 $(this).on('click', function(){
-                    swal(nameProduct, "is added to cart !", "success");
+                    $(document).ready(function(){
+                        var quantity = 1;
+
+                        $('.quantity-right-plus').click(function(e){
+                            e.preventDefault();
+                            var quantity = parseInt($('#quantity').val());
+                            $('#quantity').val(quantity + 1);
+                        });
+
+                        $('.quantity-left-minus').click(function(e){
+                            e.preventDefault();
+                            var quantity = parseInt($('#quantity').val());
+                            if(quantity > 1){
+                                $('#quantity').val(quantity - 1);
+                            }
+                        });
+
+                    });
+//                    swal(nameProduct, "is added to cart !", "success");
+                    swal({
+                        width:1000,
+                        html:
+                        '<div id="imagetest"></div>'+
+                            ' <div style="float: left;width:40%"><img src="images/03-27-18_wickedlydlml_violet_0419.jpg" height="500"></div>'+
+                            ' <div style="float: rigth;margin-left: 43%;width:55%"></div><div class="container">\n' +
+                            '    <div class="row">\n' +
+                            '\n' +
+                            '\n' +
+                            '        <!-- Add to cart -->\n' +
+                            '        <div class="col-12 col-lg-12 add_to_cart_block">\n' +
+                            '            <div class="card bg-light mb-3">\n' +
+                            '                <div class="card-body">L\'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).\n' +
+                            '                    <p class="price">99.00 $</p>\n' +
+                            '                    <p class="price_discounted">149.90 $</p>\n' +
+                            '                    <form method="get" action="cart.html">\n' +
+                            '                        <div class="form-group">\n' +
+                            '                            <label for="colors">Couleur</label>\n' +
+                            '                            <select class="custom-select" id="colors">\n' +
+                            '                                <option selected>Selectionner</option>\n' +
+                            '                                <option value="1">Bleu</option>\n' +
+                            '                                <option value="2">Rouge</option>\n' +
+                            '                                <option value="3">Verte</option>\n' +
+                            '                            </select>\n' +
+                            '                        </div>\n' +
+                            '                        <div class="form-group">\n' +
+                            '                            <label>Quantity :</label>\n' +
+                            '                            <div class="input-group mb-3">\n' +
+                            '                                <div class="input-group-prepend">\n' +
+                            '                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">\n' +
+                            '                                        <i class="fa fa-minus"></i>\n' +
+                            '                                    </button>\n' +
+                            '                                </div>\n' +
+                            '                                <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">\n' +
+                            '                                <div class="input-group-append">\n' +
+                            '                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">\n' +
+                            '                                        <i class="fa fa-plus"></i>\n' +
+                            '                                    </button>\n' +
+                            '                                </div>\n' +
+                            '                            </div>\n' +
+                            '                        </div>\n' +
+                            '                        <a href="cart.html" class="btn btn-success btn-lg btn-block text-uppercase">\n' +
+                            '                            <i class="fa fa-shopping-cart"></i> Add To Cart\n' +
+                            '                        </a>\n' +
+                            '                    </form>\n' +
+                            '                </div>\n' +
+                            '            </div>\n' +
+                            '        </div>\n' +
+                            '    </div>\n' +
+                            '</div>',
+
+
+                    });
+                    document.getElementById("imagetest").innerHTML = nameProduct;
                 });
             });
 
