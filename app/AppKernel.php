@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Http\HttplugBundle\HttplugBundle(), // If you require the php-http/httplug-bundle package.
+            new Vich\UploaderBundle\VichUploaderBundle(),
             new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Commerce\UserBundle\CommerceUserBundle(),

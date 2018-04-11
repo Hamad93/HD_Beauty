@@ -112,3 +112,6 @@ hwi_oauth:
             options:
                 display: popup #dialog is optimized for popup window
                 csrf: true
+
+vich_uploader:
+    db_driver: orm # or mongodb or propel or phpcr

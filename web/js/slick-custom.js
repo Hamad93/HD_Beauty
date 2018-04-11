@@ -33,7 +33,7 @@
 
             action3[0] = setTimeout(function(){
                 $(btnSlide1[0]).addClass($(btnSlide1)[0].data('appear') + ' visible-true');
-            },1800);              
+            },1800);
         });
 
 
@@ -50,10 +50,10 @@
             arrows: true,
             appendArrows: $('.wrap-slick1'),
             prevArrow:'<button class="arrow-slick1 prev-slick1"><i class="fa  fa-angle-left" aria-hidden="true"></i></button>',
-            nextArrow:'<button class="arrow-slick1 next-slick1"><i class="fa  fa-angle-right" aria-hidden="true"></i></button>',  
+            nextArrow:'<button class="arrow-slick1 next-slick1"><i class="fa  fa-angle-right" aria-hidden="true"></i></button>',
         });
 
-        $('.slick1').on('afterChange', function(event, slick, currentSlide){ 
+        $('.slick1').on('afterChange', function(event, slick, currentSlide){
             for(var i=0; i<itemSlick1.length; i++) {
 
               clearTimeout(action1[i]);
@@ -77,11 +77,11 @@
 
             action3[currentSlide] = setTimeout(function(){
                 $(btnSlide1[currentSlide]).addClass($(btnSlide1)[currentSlide].data('appear') + ' visible-true');
-            },1800);            
+            },1800);
         });
 
 
-        
+
         /*[ Slick2 ]
         ===========================================================*/
         $('.slick2').slick({
@@ -93,7 +93,7 @@
             arrows: true,
             appendArrows: $('.wrap-slick2'),
             prevArrow:'<button class="arrow-slick2 prev-slick2"><i class="fa  fa-angle-left" aria-hidden="true"></i></button>',
-            nextArrow:'<button class="arrow-slick2 next-slick2"><i class="fa  fa-angle-right" aria-hidden="true"></i></button>',  
+            nextArrow:'<button class="arrow-slick2 next-slick2"><i class="fa  fa-angle-right" aria-hidden="true"></i></button>',
             responsive: [
                 {
                   breakpoint: 1200,
@@ -123,29 +123,53 @@
                     slidesToScroll: 1
                   }
                 }
-            ]    
+            ]
         });
 
+    /*[ Slick2 ]
+  ===========================================================*/
+    $('.slick22').slick({
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        infinite: true,
+        autoplay: false,
+        autoplaySpeed: 6000,
+        arrows: true,
+        appendArrows: $('.wrap-slick22'),
+        prevArrow:'<button class="arrow-slick22 prev-slick22"><i class="fa  fa-angle-left" aria-hidden="true"></i></button>',
+        nextArrow:'<button class="arrow-slick22 next-slick22"><i class="fa  fa-angle-right" aria-hidden="true"></i></button>',
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
 
-        /*[ Slick3 ]
-        ===========================================================*/
-        $('.slick3').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            fade: true,
-            dots: true,
-            appendDots: $('.wrap-slick3-dots'),
-            dotsClass:'slick3-dots',
-            infinite: true,
-            autoplay: false,
-            autoplaySpeed: 6000,
-            arrows: false,
-            customPaging: function(slick, index) {
-                var portrait = $(slick.$slides[index]).data('thumb');
-                return '<img src=" ' + portrait + ' "/><div class="slick3-dot-overlay"></div>';
-            },  
-        });
 
-        
 
 })(jQuery);
