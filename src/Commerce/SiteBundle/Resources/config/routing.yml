@@ -21,3 +21,4 @@ commerce_site_contacter_nous:
 commerce_site_apropros:
     path:     /Qui-Sommes-nous
     defaults: { _controller: CommerceSiteBundle:Default:apropos }
+

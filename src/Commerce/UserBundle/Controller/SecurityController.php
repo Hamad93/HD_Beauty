@@ -95,6 +95,6 @@ class SecurityController extends Controller
      */
     protected function renderLogin(array $data)
     {
-        return $this->render('@CommerceAdmin/includes/login_content.html.twig', $data);
+        return $this->render('@CommerceUser/Security/login.html.twig', $data);
     }
 }

@@ -38,9 +38,13 @@
     {% endblock %}
 </head>
 <body class="animsition">
-    {% block nav %}
-        {{ include('@CommerceAdmin/Includes/navigation.html.twig') }}
-    {% endblock %}
+    {#{% block nav %}#}
+        {#{{ include('@CommerceAdmin/Includes/navigation.html.twig') }}#}
+    {#{% endblock %}#}
+
+    <div id="menu">
+        {{ render(controller("CommerceAdminBundle:Admin:navigation")) }}
+    </div>
 
 
     {% block body %}
@@ -176,6 +180,32 @@
 
                 });
             });
+
+            $('.btn_connexion').each(function(){
+                $(this).on('click', function(){
+//                    swal(nameProduct, "is added to cart !", "success");
+                    swal({
+                            title: 'Submit to run ajax request',
+                            showCancelButton: true,
+                            confirmButtonText: 'Submit',
+                            background: 'rgba(68, 10, 3,.8)',
+                            closeOnConfirm: false,
+                            html: '<div class="form-group has-success">\n' +
+                            '  <label class="control-label" for="inputSuccess1">Input with success</label>\n' +
+                            '  <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2" style="background-color:color: white">\n' +
+                            '  <span id="helpBlock2" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>\n' +
+                            '</div>'
+                        },
+                        function() {
+                            swal.disableButtons();
+                            setTimeout(function() {
+                                swal('Ajax request finished!');
+                            }, 2000);
+                        });
+
+                });
+            });
+
 
             $('.block2-btn-addwishlist').each(function(){
                 var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();

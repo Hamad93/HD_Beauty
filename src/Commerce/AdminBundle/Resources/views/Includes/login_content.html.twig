@@ -1,33 +1,40 @@
-<div class="row">
-    <div class="col-md-12">
-        Se connecter via
-        <div class="social-buttons">
-            {% for owner in hwi_oauth_resource_owners() %}
-                {% if owner=="facebook" %}
-                    <a href="{{ hwi_oauth_login_url(owner) }}" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                {% elseif owner=="google" %}
-                    <a href="{{ hwi_oauth_login_url(owner) }}" class="btn btn-google"><i class="fa fa-google"></i> Google</a>
-                {% endif %}
-            {% endfor %}
+Se connecter via
+<div class="social-buttons">
+    {% for owner in hwi_oauth_resource_owners() %}
+        {% if owner=="facebook" %}
+            <a href="{{ hwi_oauth_login_url(owner) }}" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+        {% elseif owner=="google" %}
+            <a href="{{ hwi_oauth_login_url(owner) }}" class="btn btn-google"><i class="fa fa-google"></i> Google</a>
+        {% endif %}
+    {% endfor %}
 
-        </div>
-        <div style="margin-left: 46%">Ou</div>
-        <form class="form" role="form" method="post" action="{{ path("fos_user_security_check") }}" accept-charset="UTF-8" id="login-nav">
-            <div class="form-group">
-                <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-            </div>
-            <div class="form-group">
-                <label class="sr-only" for="exampleInputPassword2">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-            </div>
-        </form>
+</div>
+<div style="margin-left: 46%">Ou</div>
+
+<form role="form" action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+
+
+    <div class="form-group">
+        <label for="usrname"><span class="glyphicon glyphicon-user"></span> Pseudo</label>
+        <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Entrer votre pseudo"/>
     </div>
-    <div class="bottom text-center">
-        Nouveau ici ? <a href="#"><b>Rejoignez-nous</b></a>
+    <div class="form-group">
+        <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Mot de passe</label>
+        <input type="password" class="form-control" id="password" name="_password" required="required" placeholder="Entrer votre mot de passe" />
+        <div class="help-block text-right"><a href="">Forget the password ?</a></div>
     </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on">Rester connecter ?
+        </label>
+    </div>
+    <div class="form-group">
+        <button type="submit"  id="_submit" name="_submit" class="btn btn-primary btn-block">Sign in</button>
+    </div>
+</form>
+<div class="bottom text-center">
+    Nouveau ici ? <a href="#"><b class="btn_connexion">Rejoignez-nous</b></a>
 </div>

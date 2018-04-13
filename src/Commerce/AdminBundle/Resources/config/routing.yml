@@ -7,8 +7,11 @@ commerce_user:
 
 commerce_admin_homepage:
     path:     /admin
-    defaults: { _controller: CommerceAdminBundle:Default:index}
+    defaults: { _controller: CommerceAdminBundle:Admin:index}
 
+commerce_admin_navigation:
+    path:     /navigation
+    defaults: { _controller: CommerceAdminBundle:Admin:navigation}
 
 commerce_hwiconnexion:
     resource: "@CommerceHwiconnexionBundle/Resources/config/routing.xml"
