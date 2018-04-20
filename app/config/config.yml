@@ -115,3 +115,10 @@ hwi_oauth:
 
 vich_uploader:
     db_driver: orm # or mongodb or propel or phpcr
+
+
+assetic:
+    debug:    '%kernel.debug%'
+    use_controller:    '%kernel.debug%'
+    filters:
+        cssrewrite:    ~

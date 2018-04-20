@@ -1,41 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% block title %}Acceuil{% endblock %}</title>
+    <title>{% block title %}HD_Beauty{% endblock %}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block stylesheets %}
-        <!--===============================================================================================-->
-        <link rel="icon" href="images/favicon.ico"/>
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="fonts/elegant-font/html-css/style.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="css/util.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <!--===============================================================================================-->
+        {% stylesheets
+            'vendor/bootstrap/css/bootstrap.min.css'
+            'fonts/font-awesome-4.7.0/css/font-awesome.min.css'
+            'fonts/themify/themify-icons.css'
+            'fonts/Linearicons-Free-v1.0.0/icon-font.min.css'
+            'fonts/elegant-font/html-css/style.css'
+            'vendor/animate/animate.css'
+            'vendor/css-hamburgers/hamburgers.min.css'
+            'vendor/animsition/css/animsition.min.css'
+            'vendor/select2/select2.min.css'
+            'vendor/daterangepicker/daterangepicker.css'
+            'vendor/slick/slick.css'
+            'vendor/lightbox2/css/lightbox.min.css'
+            'css/util.css'
+            'css/main.css'
+            filter='cssrewrite'
+            output='css/compiled/app.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
     {% endblock %}
+    <link rel="icon" href="{{ asset('images/favicon.ico') }}"/>
 </head>
 <body class="animsition">
     {#{% block nav %}#}
@@ -56,32 +47,30 @@
 
 
     {% block javascripts %}
+        {% javascripts
+        'vendor/jquery/jquery-3.2.1.min.js'
+        'vendor/animsition/js/animsition.min.js'
+        'vendor/bootstrap/js/popper.js'
+        'vendor/bootstrap/js/bootstrap.min.js'
+        'vendor/select2/select2.min.js'
+        'vendor/slick/slick.min.js'
+        'js/slick-custom.js'
+        'vendor/countdowntime/countdowntime.js'
+        'vendor/lightbox2/js/lightbox.min.js'
+        'vendor/sweetalert/sweetalert.min.js'
+        'js/main.js'
+        output='js/compiled/app.js' %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
 
-        <!--===============================================================================================-->
-        <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-        <!--===============================================================================================-->
-        <script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
-        <!--===============================================================================================-->
-        <script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
-        <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
-        <!--===============================================================================================-->
-        <script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+
         <script type="text/javascript">
             $(".selection-1").select2({
                 minimumResultsForSearch: 20,
                 dropdownParent: $('#dropDownSelect1')
             });
         </script>
-        <!--===============================================================================================-->
-        <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
-        <script type="text/javascript" src="js/slick-custom.js"></script>
-        <!--===============================================================================================-->
-        <script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
-        <!--===============================================================================================-->
-        <script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
-        <!--===============================================================================================-->
-        <script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
-        <script type="text/javascript" src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
         <script type="text/javascript">
             $('.block2-btn-addcart').each(function(){
                 var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
@@ -105,78 +94,78 @@
                         });
 
                     });
-//                    swal(nameProduct, "is added to cart !", "success");
-                    swal({
-                        width:1200,
-                        html:
-                        '<div id="imagetest"></div>'+
-                            ' <div style="border: 1px solid red;float: left;width:40%"><img src="images/03-27-18_wickedlydlml_violet_0419.jpg" height="500"></div>'+
-                            ' <div style="border: 1px solid red;float: rigth;margin-left: 43%;width:55%"></div><div class="container">\n' +
-                            '    <div class="row">\n' +
-                            '\n' +
-                            '\n' +
-                            '        <!-- Add to cart -->\n' +
-                            '        <div class="col-12 col-lg-12 add_to_cart_block">\n' +
-                            '            <div class="card bg-light mb-3">\n' +
-                            '                <div class="card-body">\n' +
-                            '                    <p class="price">99.00 $</p>\n' +
-                            '                    <p class="price_discounted">149.90 $</p>\n' +
-                            '                    <form method="get" action="cart.html">\n' +
-                            '                        <div class="form-group">\n' +
-                            '                            <label for="colors">Color</label>\n' +
-                            '                            <select class="custom-select" id="colors">\n' +
-                            '                                <option selected>Select</option>\n' +
-                            '                                <option value="1">Blue</option>\n' +
-                            '                                <option value="2">Red</option>\n' +
-                            '                                <option value="3">Green</option>\n' +
-                            '                            </select>\n' +
-                            '                        </div>\n' +
-                            '                        <div class="form-group">\n' +
-                            '                            <label>Quantity :</label>\n' +
-                            '                            <div class="input-group mb-3">\n' +
-                            '                                <div class="input-group-prepend">\n' +
-                            '                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">\n' +
-                            '                                        <i class="fa fa-minus"></i>\n' +
-                            '                                    </button>\n' +
-                            '                                </div>\n' +
-                            '                                <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">\n' +
-                            '                                <div class="input-group-append">\n' +
-                            '                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">\n' +
-                            '                                        <i class="fa fa-plus"></i>\n' +
-                            '                                    </button>\n' +
-                            '                                </div>\n' +
-                            '                            </div>\n' +
-                            '                        </div>\n' +
-                            '                        <a href="cart.html" class="btn btn-success btn-lg btn-block text-uppercase">\n' +
-                            '                            <i class="fa fa-shopping-cart"></i> Add To Cart\n' +
-                            '                        </a>\n' +
-                            '                    </form>\n' +
-                            '                    <div class="product_rassurance">\n' +
-                            '                        <ul class="list-inline">\n' +
-                            '                            <li class="list-inline-item"><i class="fa fa-truck fa-2x"></i><br/>Fast delivery</li>\n' +
-                            '                            <li class="list-inline-item"><i class="fa fa-credit-card fa-2x"></i><br/>Secure payment</li>\n' +
-                            '                            <li class="list-inline-item"><i class="fa fa-phone fa-2x"></i><br/>+33 1 22 54 65 60</li>\n' +
-                            '                        </ul>\n' +
-                            '                    </div>\n' +
-                            '                    <div class="reviews_product p-3 mb-2 ">\n' +
-                            '                        3 reviews\n' +
-                            '                        <i class="fa fa-star"></i>\n' +
-                            '                        <i class="fa fa-star"></i>\n' +
-                            '                        <i class="fa fa-star"></i>\n' +
-                            '                        <i class="fa fa-star"></i>\n' +
-                            '                        <i class="fa fa-star"></i>\n' +
-                            '                        (4/5)\n' +
-                            '                        <a class="pull-right" href="#reviews">View all reviews</a>\n' +
-                            '                    </div>\n' +
-                            '                 \n' +
-                            '                </div>\n' +
-                            '            </div>\n' +
-                            '        </div>\n' +
-                            '    </div>\n' +
-                            '</div>',
-
-
-                    });
+                    swal(nameProduct, "is added to cart !", "success");
+//                    swal({
+//                        width:1200,
+//                        html:
+//                        '<div id="imagetest"></div>'+
+//                            ' <div style="border: 1px solid red;float: left;width:40%"><img src="images/03-27-18_wickedlydlml_violet_0419.jpg" height="500"></div>'+
+//                            ' <div style="border: 1px solid red;float: rigth;margin-left: 43%;width:55%"></div><div class="container">\n' +
+//                            '    <div class="row">\n' +
+//                            '\n' +
+//                            '\n' +
+//                            '        <!-- Add to cart -->\n' +
+//                            '        <div class="col-12 col-lg-12 add_to_cart_block">\n' +
+//                            '            <div class="card bg-light mb-3">\n' +
+//                            '                <div class="card-body">\n' +
+//                            '                    <p class="price">99.00 $</p>\n' +
+//                            '                    <p class="price_discounted">149.90 $</p>\n' +
+//                            '                    <form method="get" action="cart.html">\n' +
+//                            '                        <div class="form-group">\n' +
+//                            '                            <label for="colors">Color</label>\n' +
+//                            '                            <select class="custom-select" id="colors">\n' +
+//                            '                                <option selected>Select</option>\n' +
+//                            '                                <option value="1">Blue</option>\n' +
+//                            '                                <option value="2">Red</option>\n' +
+//                            '                                <option value="3">Green</option>\n' +
+//                            '                            </select>\n' +
+//                            '                        </div>\n' +
+//                            '                        <div class="form-group">\n' +
+//                            '                            <label>Quantity :</label>\n' +
+//                            '                            <div class="input-group mb-3">\n' +
+//                            '                                <div class="input-group-prepend">\n' +
+//                            '                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">\n' +
+//                            '                                        <i class="fa fa-minus"></i>\n' +
+//                            '                                    </button>\n' +
+//                            '                                </div>\n' +
+//                            '                                <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">\n' +
+//                            '                                <div class="input-group-append">\n' +
+//                            '                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">\n' +
+//                            '                                        <i class="fa fa-plus"></i>\n' +
+//                            '                                    </button>\n' +
+//                            '                                </div>\n' +
+//                            '                            </div>\n' +
+//                            '                        </div>\n' +
+//                            '                        <a href="cart.html" class="btn btn-success btn-lg btn-block text-uppercase">\n' +
+//                            '                            <i class="fa fa-shopping-cart"></i> Add To Cart\n' +
+//                            '                        </a>\n' +
+//                            '                    </form>\n' +
+//                            '                    <div class="product_rassurance">\n' +
+//                            '                        <ul class="list-inline">\n' +
+//                            '                            <li class="list-inline-item"><i class="fa fa-truck fa-2x"></i><br/>Fast delivery</li>\n' +
+//                            '                            <li class="list-inline-item"><i class="fa fa-credit-card fa-2x"></i><br/>Secure payment</li>\n' +
+//                            '                            <li class="list-inline-item"><i class="fa fa-phone fa-2x"></i><br/>+33 1 22 54 65 60</li>\n' +
+//                            '                        </ul>\n' +
+//                            '                    </div>\n' +
+//                            '                    <div class="reviews_product p-3 mb-2 ">\n' +
+//                            '                        3 reviews\n' +
+//                            '                        <i class="fa fa-star"></i>\n' +
+//                            '                        <i class="fa fa-star"></i>\n' +
+//                            '                        <i class="fa fa-star"></i>\n' +
+//                            '                        <i class="fa fa-star"></i>\n' +
+//                            '                        <i class="fa fa-star"></i>\n' +
+//                            '                        (4/5)\n' +
+//                            '                        <a class="pull-right" href="#reviews">View all reviews</a>\n' +
+//                            '                    </div>\n' +
+//                            '                 \n' +
+//                            '                </div>\n' +
+//                            '            </div>\n' +
+//                            '        </div>\n' +
+//                            '    </div>\n' +
+//                            '</div>',
+//
+//
+//                    });
 
                 });
             });
@@ -192,8 +181,11 @@
                             closeOnConfirm: false,
                             html: '<div class="form-group has-success">\n' +
                             '  <label class="control-label" for="inputSuccess1">Input with success</label>\n' +
-                            '  <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2" style="background-color:color: white">\n' +
-                            '  <span id="helpBlock2" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>\n' +
+                            '  <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2" style="background-color:color: white"><br/>' +
+                            '  <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2" style="background-color:color: white"><br/>' +
+                            '  <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2" style="background-color:color: white"><br/>' +
+                            '  <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2" style="background-color:color: white"><br/>' +
+                            '  <span id="helpBlock2" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>' +
                             '</div>'
                         },
                         function() {
@@ -215,8 +207,6 @@
             });
         </script>
 
-        <!--===============================================================================================-->
-        <script src="js/main.js"></script>
     {% endblock %}
 </body>
 </html>
