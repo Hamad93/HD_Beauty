@@ -20,7 +20,7 @@
         <div class="wrap_header">
             <!-- Logo -->
             <a href="{{ path('commerce_site_homepage') }}" class="logo">
-                <img src="images/icons/logo.jpg" alt="IMG-LOGO">
+                <img src="{{ asset('images/icons/logo.jpg') }}" alt="IMG-LOGO">
             </a>
 
             <!-- Menu -->
@@ -138,7 +138,7 @@
             <!-- Header Icon -->
             <div class="header-icons dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+                    <img src="{{ asset('images/icons/icon-header-01.png') }}" class="header-icon1" alt="ICON">
                 </a>
                 <ul id="login-dp" class="dropdown-menu">
                     <li>
@@ -148,7 +148,7 @@
                 <span class="linedivide1"></span>
 
                 <div class="header-wrapicon2">
-                    <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                    <img src="{{ asset('images/icons/icon-header-02.png') }}" class="header-icon1 js-show-header-dropdown" alt="ICON">
                     <span class="header-icons-noti">0</span>
 
                     <!-- Header cart noti -->
@@ -156,7 +156,7 @@
                         <ul class="header-cart-wrapitem">
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
-                                    <img src="images/item-cart-01.jpg" alt="IMG">
+                                    <img src="{{ asset('images/item-cart-01.jpg') }}" alt="IMG">
                                 </div>
 
                                 <div class="header-cart-item-txt">
@@ -172,7 +172,7 @@
 
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
-                                    <img src="images/item-cart-02.jpg" alt="IMG">
+                                    <img src="{{ asset('images/item-cart-02.jpg') }}" alt="IMG">
                                 </div>
 
                                 <div class="header-cart-item-txt">
@@ -188,7 +188,7 @@
 
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
-                                    <img src="images/item-cart-03.jpg" alt="IMG">
+                                    <img src="{{ asset('images/item-cart-03.jpg') }}" alt="IMG">
                                 </div>
 
                                 <div class="header-cart-item-txt">
@@ -268,7 +268,7 @@
                                 </form>
                             </div>
                             <div class="bottom text-center">
-                                Nouveau ici ? <a href="#"><b>Rejoignez-nous</b></a>
+                                Nouveau ici ? <a href="{{ path("fos_user_registration_register") }}"><b>Rejoignez-nous</b></a>
                             </div>
                         </div>
                     </li>

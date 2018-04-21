@@ -1,8 +1,50 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+{#{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}#}
+    {#{{ form_widget(form) }}#}
+    {#<div>#}
+        {#<input type="submit" value="{{ 'registration.submit'|trans }}" />#}
+    {#</div>#}
+{#{{ form_end(form) }}#}
+
+
+<div class="container">
+    <div class="col-lg-6 p-b-30" style="margin-left: 25%">
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+            <h4 class="m-text26 p-b-36 p-t-15">
+                Créer un nouveau compte client
+            </h4>
+
+            <div class="bo4 of-hidden size15 m-b-20">
+                {{ form_widget(form.username,{'attr':{'class':'form-control','placeholder':'Nom d\'utilisateur'}})}}
+                {{ form_errors(form.username) }}
+
+            </div>
+
+            <div class="bo4 of-hidden size15 m-b-20">
+                {{ form_widget(form.email,{'attr':{'class':'form-control','placeholder':'Email','name':'user_mail','required':'required'}})}}
+                {{ form_errors(form.email) }}
+            </div>
+
+            <div class="bo4 of-hidden size15 m-b-20">
+                <div class="input-group">
+                    {{ form_widget(form.plainPassword.first,{'attr':{'class':'form-control pwd1','placeholder':'Mot de passe'}})}}
+                </div>
+                {{ form_errors(form.plainPassword.first) }}
+            </div>
+            <div class="bo4 of-hidden size15 m-b-20">
+                    <div class="input-group">
+                        {{ form_widget(form.plainPassword.second,{'attr':{'class':'form-control pwd2','placeholder':'Confirmer le mot de passe','onkeyup':'checkPass(); return false;'}})}}
+                    </div>
+                    {{ form_errors(form.plainPassword.second) }}
+            </div>
+
+            <div class="w-size25">
+                <!-- Button -->
+                <button class="flex-c-m size2 bo-rad-23 hov1 m-text3 trans-0-4 btn btn-success">
+                    Valider
+                </button>
+            </div>
+        {{ form_end(form) }}
     </div>
-{{ form_end(form) }}
+</div>
