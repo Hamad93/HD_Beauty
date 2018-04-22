@@ -13,12 +13,27 @@ class DefaultController extends Controller
     }
     public function accessoiresAction()
     {
-        return $this->render('CommerceSiteBundle::product.html.twig');
+        return $this->render('CommerceSiteBundle::accessoires.html.twig');
+    }
+
+    public function maquillagesAction()
+    {
+        return $this->render('CommerceSiteBundle::maquillages.html.twig');
+    }
+
+    public function marquesAction()
+    {
+        return $this->render('CommerceSiteBundle::marques.html.twig');
+    }
+
+    public function tutosAction()
+    {
+        return $this->render('CommerceSiteBundle::tutos.html.twig');
     }
 
     public function panierAction()
     {
-        return $this->render('CommerceSiteBundle::cart.html.twig');
+        return $this->render('CommerceSiteBundle::panier.html.twig');
     }
 
     public function blogAction()
@@ -31,6 +46,6 @@ class DefaultController extends Controller
     }
     public function aproposAction()
     {
-        return $this->render('CommerceSiteBundle::about.html.twig');
+        return $this->render('CommerceSiteBundle::apropos.html.twig');
     }
 }

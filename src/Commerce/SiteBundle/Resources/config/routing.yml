@@ -6,6 +6,18 @@ commerce_site_accessoires:
     path:     /accessoires
     defaults: { _controller: CommerceSiteBundle:Default:accessoires }
 
+commerce_site_maquillages:
+    path:     /maquillages
+    defaults: { _controller: CommerceSiteBundle:Default:maquillages }
+
+commerce_site_tutos:
+    path:     /tutos
+    defaults: { _controller: CommerceSiteBundle:Default:tutos }
+
+commerce_site_marques:
+    path:     /marques
+    defaults: { _controller: CommerceSiteBundle:Default:marques }
+
 commerce_site_panier:
     path:     /panier
     defaults: { _controller: CommerceSiteBundle:Default:panier }
